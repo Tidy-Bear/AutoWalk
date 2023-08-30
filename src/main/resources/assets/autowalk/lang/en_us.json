@@ -1,4 +1,4 @@
 {
-  "autowalk.keybind.autowalk": "Auto Walk",
-  "autowalk.misc.autowalking.msg": "Auto Walking"
+  "key.autowalk.autowalk": "Auto Walk",
+  "gui.autowalk.title": "Auto Walking"
 }

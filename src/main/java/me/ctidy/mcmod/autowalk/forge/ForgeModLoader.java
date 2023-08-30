@@ -1,6 +1,7 @@
-package me.ctidy.mcmod.autowalk;
+package me.ctidy.mcmod.autowalk.forge;
 
-import me.ctidy.mcmod.autowalk.client.ClientEventHandler;
+import me.ctidy.mcmod.autowalk.client.AutoWalkClient;
+import me.ctidy.mcmod.autowalk.ModEnvConstants;
 import me.ctidy.mcmod.autowalk.config.AutoWalkClientConfig;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -12,12 +13,16 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 
-@Mod(AutoWalk.MODID)
-public class AutoWalk {
+/**
+ * ForgeModLoader
+ *
+ * @author ctidy
+ * @since 2023/8/31
+ */
+@Mod(ModEnvConstants.MOD_ID)
+public class ForgeModLoader {
 
-    public static final String MODID = "autowalk";
-
-    public AutoWalk() {
+    public ForgeModLoader() {
         ModLoadingContext.get().registerExtensionPoint(IExtensionPoint.DisplayTest.class, () -> new IExtensionPoint.DisplayTest(
                 () -> "ANY", (remote, isServer) -> true
         ));
@@ -29,7 +34,7 @@ public class AutoWalk {
 
     @OnlyIn(Dist.CLIENT)
     public void registerKeyMappings(final RegisterKeyMappingsEvent event) {
-        event.register(ClientEventHandler.AUTO_WALK_KEY);
+        event.register(AutoWalkClient.AUTO_WALK_KEY);
     }
 
 }

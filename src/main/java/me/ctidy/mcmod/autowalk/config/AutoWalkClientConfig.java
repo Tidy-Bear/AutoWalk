@@ -44,4 +44,5 @@ public class AutoWalkClientConfig {
 
         builder.pop();
     }
+
 }
