@@ -1,9 +1,13 @@
 {
+  "required": true,
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_17",
-  "required": true,
   "package": "me.ctidy.mcmod.autowalk.mixin",
   "client": [
     "LocalPlayerMixin"
-  ]
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "mixins.autowalk.refmap.json"
 }
