@@ -48,7 +48,7 @@ public final class ForgeClientEventHandler {
      * Try to toggle auto walking when certain mouse button is pressed.
      */
     @SubscribeEvent
-    public static void onMouseInput(final InputEvent.MouseButton event) {
+    public static void onMouseInput(final InputEvent.MouseButton.Pre event) {
         event.setCanceled(AutoWalkClient.instance().acceptInput());
     }
 
