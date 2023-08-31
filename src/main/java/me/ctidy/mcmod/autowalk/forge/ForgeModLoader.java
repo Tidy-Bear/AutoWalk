@@ -1,11 +1,12 @@
 package me.ctidy.mcmod.autowalk.forge;
 
-import me.ctidy.mcmod.autowalk.client.AutoWalkClient;
 import me.ctidy.mcmod.autowalk.ModEnvConstants;
+import me.ctidy.mcmod.autowalk.client.AutoWalkClient;
 import me.ctidy.mcmod.autowalk.config.AutoWalkClientConfig;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
+import net.minecraftforge.client.settings.KeyConflictContext;
 import net.minecraftforge.fml.IExtensionPoint;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -34,6 +35,7 @@ public class ForgeModLoader {
 
     @OnlyIn(Dist.CLIENT)
     public void registerKeyMappings(final RegisterKeyMappingsEvent event) {
+        AutoWalkClient.AUTO_WALK_KEY.setKeyConflictContext(KeyConflictContext.IN_GAME);
         event.register(AutoWalkClient.AUTO_WALK_KEY);
     }
 
