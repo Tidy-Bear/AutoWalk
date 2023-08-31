@@ -8,8 +8,8 @@ import me.ctidy.mcmod.autowalk.config.AutoWalkClientConfig;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.resources.language.I18n;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -49,8 +49,7 @@ public final class AutoWalkClient {
      * Draw message horizontally centered and vertically up on the screen when auto walking.
      */
     public void drawHud(Window window, PoseStack poseStack) {
-        if (mc.player == null ||
-                !((IAutoWalkable) mc.player).isAutoWalkEnabled()) return;
+        if (!(mc.player instanceof IAutoWalkable player) || !player.isAutoWalkEnabled()) return;
 
         String message = I18n.get("gui.autowalk.title");
         String displayMessage = cyclicTickInGame < 10 ? "OoO " + message + " oOo" : "oOo " + message + " OoO";
@@ -67,8 +66,7 @@ public final class AutoWalkClient {
      * Try to toggle auto walking when has input.
      */
     public boolean acceptInput() {
-        if (mc.player == null) return false;
-        IAutoWalkable player = (IAutoWalkable) mc.player;
+        if (!(mc.player instanceof IAutoWalkable player)) return false;
         if (mc.options.keyUp.consumeClick()) {
             // abort auto walking when 'W' pressed
             player.stopAutoWalk();
@@ -84,9 +82,9 @@ public final class AutoWalkClient {
     /**
      * Keep player forward when auto walking.
      */
-    public void autoForward(LocalPlayer player) {
-        if (mc.player == null || player != mc.player) return;
-        ((IAutoWalkable) player).autoForward();
+    public void autoForward(Player player) {
+        if (!(player instanceof IAutoWalkable autoWalkablePlayer) || player != mc.player) return;
+        autoWalkablePlayer.autoForward();
     }
 
 

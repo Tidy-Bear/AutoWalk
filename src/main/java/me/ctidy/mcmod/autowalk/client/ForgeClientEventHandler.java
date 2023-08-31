@@ -1,10 +1,9 @@
 package me.ctidy.mcmod.autowalk.client;
 
 import me.ctidy.mcmod.autowalk.ModEnvConstants;
-import me.ctidy.mcmod.autowalk.config.AutoWalkClientConfig;
 import me.ctidy.mcmod.autowalk.api.IAutoWalkable;
+import me.ctidy.mcmod.autowalk.config.AutoWalkClientConfig;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.InputEvent;
@@ -66,7 +65,7 @@ public final class ForgeClientEventHandler {
      */
     @SubscribeEvent
     public static void onMovementInput(final MovementInputUpdateEvent event) {
-        AutoWalkClient.instance().autoForward(((LocalPlayer) event.getEntity()));
+        AutoWalkClient.instance().autoForward(event.getEntity());
     }
 
     /**
