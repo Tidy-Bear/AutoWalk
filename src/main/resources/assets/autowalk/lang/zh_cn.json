@@ -1,13 +1,19 @@
 {
-  "autowalk.lang.version": "1.0.1",
+  "autowalk.lang.version": "1.0.2",
 
   "key.autowalk.autowalk": "自动行进",
   "gui.autowalk.title": "自动行进",
 
+  "autowalk.config.section.hud": "Hud 设置",
+
   "autowalk.config.show_hud": "显示 HUD",
-  "autowalk.config.show_hud.comment": "是否在屏幕正中央显示自动行进的提示。",
+  "autowalk.config.show_hud.tooltip": "是否在屏幕正中央显示自动行进的提示。\n[默认值: true]",
+
   "autowalk.config.hud_offset_y": "HUD Y 轴 偏移量",
-  "autowalk.config.hud_offset_y.comment": "距离屏幕顶部的垂直偏移量。",
+  "autowalk.config.hud_offset_y.tooltip": "距离屏幕顶部的垂直偏移量。\n[默认值: 10]",
+
+  "autowalk.config.section.action": "行为设置",
+
   "autowalk.config.auto_jump": "自动跳跃",
-  "autowalk.config.auto_jump.comment": "设置为 true 时，玩家会在自动行进时自动跳跃；\n设置为 false 时，玩家能否在自动行进的同时自动跳跃则取决于原版的选项设置。"
+  "autowalk.config.auto_jump.tooltip": "设置为 true 时，玩家会在自动行进时自动跳跃；\n设置为 false 时，玩家能否在自动行进的同时自动跳跃则取决于原版的选项设置。\n[默认值: true]"
 }

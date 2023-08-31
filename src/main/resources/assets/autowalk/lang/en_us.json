@@ -1,13 +1,19 @@
 {
-  "autowalk.lang.version": "1.0.1",
+  "autowalk.lang.version": "1.0.2",
 
   "key.autowalk.autowalk": "Auto Walk",
   "gui.autowalk.title": "Auto Walking",
 
+  "autowalk.config.section.hud": "Hud Settings",
+
   "autowalk.config.show_hud": "Show Hud",
-  "autowalk.config.show_hud.comment": "Whether show message horizontally centered on the screen when auto walking.",
+  "autowalk.config.show_hud.tooltip": "Whether show message horizontally centered on the screen when auto walking.\n[Default: true]",
+
   "autowalk.config.hud_offset_y": "Hud Offset Y",
-  "autowalk.config.hud_offset_y.comment": "The vertical offset from the top of the screen.",
+  "autowalk.config.hud_offset_y.tooltip": "The vertical offset from the top of the screen.\n[Default: 10]",
+
+  "autowalk.config.section.action": "Action Settings",
+
   "autowalk.config.auto_jump": "Auto Jump",
-  "autowalk.config.auto_jump.comment": "When set to true, player can auto jump when auto walking.\nWhen set to false, it will depend on the vanilla settings."
+  "autowalk.config.auto_jump.tooltip": "When set to true, player can auto jump when auto walking.\nWhen set to false, it will depend on the vanilla settings.\n[Default: true]"
 }

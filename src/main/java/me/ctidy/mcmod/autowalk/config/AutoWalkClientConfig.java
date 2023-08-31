@@ -35,22 +35,26 @@ public class AutoWalkClientConfig {
     }
 
     private static String commentTKey(final String key) {
-        return nameTKey(key) + ".comment";
+        return nameTKey(key) + ".tooltip";
     }
 
     public AutoWalkClientConfig(ForgeConfigSpec.Builder builder) {
-        builder.push("hud");
+        builder.push("hud").translation(nameTKey("section.hud"));
 
-        showHud = builder.comment("Whether show message horizontally centered on the screen when auto walking.")
+        showHud = builder.comment("Whether show message horizontally centered on the screen when auto walking.",
+                        "[Default: true]")
                 .translation(nameTKey("show_hud"))
                 .define("enable", true);
-        hudOffsetY = builder.comment("The vertical offset from the top of the screen.")
+        hudOffsetY = builder.comment("The vertical offset from the top of the screen.",
+                        "[Default: 10]")
                 .translation(nameTKey("hud_offset_y"))
                 .define("offset_y", 10);
 
-        builder.pop().push("action");
+        builder.pop().push("action").translation(nameTKey("section.action"));
 
-        autoJump = builder.comment("When set to true, player can auto jump when auto walking.\nWhen set to false, it will depend on the vanilla settings.")
+        autoJump = builder.comment("When set to true, player can auto jump when auto walking.",
+                        "When set to false, it will depend on the vanilla settings.",
+                        "[Default: true]")
                 .translation(nameTKey("auto_jump"))
                 .define("auto_jump", true);
 
